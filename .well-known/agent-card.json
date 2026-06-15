@@ -1,0 +1,144 @@
+{
+  "name": "Self Healing Infrastructure Mcp",
+  "version": "1.0.6",
+  "url": "https://mcp.meok.ai/self-healing-infrastructure-mcp/a2a",
+  "capabilities": {
+    "streaming": false,
+    "pushNotifications": false,
+    "stateTransitionHistory": false
+  },
+  "protocolVersion": "0.3.0",
+  "description": "AI-powered self healing infrastructure MCP server for agents. Supports node health check, cluster health check, restart service. By MEOK AI Labs.",
+  "provider": {
+    "organization": "MEOK AI LABS",
+    "url": "https://meok.ai"
+  },
+  "defaultInputModes": [
+    "application/json",
+    "text/plain"
+  ],
+  "defaultOutputModes": [
+    "application/json",
+    "text/plain"
+  ],
+  "skills": [
+    {
+      "id": "node_health_check",
+      "name": "Node Health Check",
+      "description": "Node Health Check — a tool of the self-healing-infrastructure-mcp MCP.",
+      "tags": [
+        "health"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "cluster_health_check",
+      "name": "Cluster Health Check",
+      "description": "Cluster Health Check — a tool of the self-healing-infrastructure-mcp MCP.",
+      "tags": [
+        "health"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "restart_service",
+      "name": "Restart Service",
+      "description": "Restart Service — a tool of the self-healing-infrastructure-mcp MCP.",
+      "tags": [
+        "health"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "cost_report",
+      "name": "Cost Report",
+      "description": "Cost Report — a tool of the self-healing-infrastructure-mcp MCP.",
+      "tags": [
+        "health"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "auto_remediate",
+      "name": "Auto Remediate",
+      "description": "Auto Remediate — a tool of the self-healing-infrastructure-mcp MCP.",
+      "tags": [
+        "health"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "gpu_orchestration",
+      "name": "Gpu Orchestration",
+      "description": "Gpu Orchestration — a tool of the self-healing-infrastructure-mcp MCP.",
+      "tags": [
+        "health"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    },
+    {
+      "id": "failover_decision",
+      "name": "Failover Decision",
+      "description": "Failover Decision — a tool of the self-healing-infrastructure-mcp MCP.",
+      "tags": [
+        "health"
+      ],
+      "inputModes": [
+        "application/json",
+        "text/plain"
+      ],
+      "outputModes": [
+        "application/json",
+        "text/plain"
+      ]
+    }
+  ],
+  "documentationUrl": "https://meok.ai",
+  "x-meok": {
+    "mcp_name": "self-healing-infrastructure-mcp",
+    "verifier": "https://proofof.ai/verify",
+    "governed_by": "CSOAI 52-article charter"
+  }
+}

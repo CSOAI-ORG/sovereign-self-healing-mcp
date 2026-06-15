@@ -4,9 +4,8 @@
   "version": "1.0.7",
   "description": "Self Healing Infrastructure MCP Server by MEOK AI Labs",
   "repository": {
-    "type": "git",
     "url": "https://github.com/CSOAI-ORG/self-healing-infrastructure-mcp",
-    "source": "https://github.com/CSOAI-ORG/self-healing-infrastructure-mcp"
+    "source": "github"
   },
   "packages": [
     {
