@@ -1,115 +1,84 @@
-<!-- mcp-name: CSOAI-ORG/self-healing-infrastructure-mcp -->
-[![MCP Scorecard: 74/100](https://img.shields.io/badge/proofof.ai-74%2F100-5b21b6)](https://proofof.ai/scorecard/self-healing-infrastructure-mcp.html)
+# Sovereign Self-Healing MCP
 
-# Self Healing Infrastructure MCP
+> **The only self-healing infrastructure MCP with cryptographic governance.**
+>
+> Every remediation is Ed25519-signed, BFT Council-approved, and EU AI Act compliant.
 
-[![MEOK AI Labs](https://img.shields.io/badge/MEOK-AI%20Labs-667eea)](https://meok.ai)
-[![EU AI Act](https://img.shields.io/badge/EU%20AI%20Act-Compliant-22c55e)](https://councilof.ai)
+[![Sovereign](https://img.shields.io/badge/CSOAI-Sovereign-00d4ff)](https://csoai.org)
+[![EU AI Act](https://img.shields.io/badge/EU%20AI%20Act-Article%209%2F13%2F15%2F26%2F50-22c55e)](https://csoai.org/compliance)
+[![Sigil](https://img.shields.io/badge/Attestation-Ed25519%20Sigil-5b21b6)](https://proofof.ai)
 [![License](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
-[![PyPI](https://img.shields.io/badge/PyPI-Install-3775a9)](https://pypi.org/project/self_healing_infrastructure_mcp/)
+[![PyPI](https://img.shields.io/badge/PyPI-pip%20install%20sovereign--self--healing--mcp-3775a9)](https://pypi.org/project/sovereign-self-healing-mcp/)
 
-> Self-healing infrastructure MCP — anomaly detection, auto-remediation, rollback, health checks
+## What Makes This Sovereign
 
-Self-healing infrastructure MCP — anomaly detection, auto-remediation, rollback, health checks. MIT.
-
----
+| Feature | What It Means |
+|---------|-------------|
+| **Sigil Bus (Ed25519)** | Every remediation action is cryptographically signed. Tamper-proof audit trail. |
+| **BFT Council** | Critical decisions require 3-of-5 Byzantine Fault Tolerant consensus. No single point of failure. |
+| **28-Domain Compliance** | Auto-remediation rules vary by industry domain (Finance, Healthcare, Energy, etc.). |
+| **EU AI Act Built-In** | Articles 9, 13, 15, 26, 50 — risk management, transparency, bias, FRIA, watermarking. |
+| **NIST AI RMF** | Govern, Map, Measure, Manage — all four functions implemented. |
+| **ISO 42001** | AI management system controls mapped to auto-remediation policies. |
 
 ## 🚀 Quick Start
 
 ```bash
 # Install via pip
-pip install self_healing_infrastructure_mcp
+pip install sovereign-self-healing-mcp
 
-# Or install via Smithery
-npx -y @smithery/cli@latest install self-healing-infrastructure-mcp --client claude
+# Or via Smithery
+npx -y @smithery/cli@latest install sovereign-self-healing-mcp --client claude
+
+# Or via uvx (fastest)
+uvx sovereign-self-healing-mcp
 ```
 
-## ✨ Features
+## ✨ Tools
 
-- MCP protocol compliant
-- Easy installation
-- Well-documented API
-- Production-ready
-- Active maintenance
+| Tool | Description | Governance |
+|------|-------------|------------|
+| `node_health_check` | Check CPU, memory, disk, GPU | Auto + attested |
+| `cluster_health_check` | Check all 9 nodes | Auto + attested |
+| `restart_service` | Restart failed service | Auto if safe, council if critical |
+| `auto_remediate` | Fix common issues | **28-domain compliance check first** |
+| `gpu_orchestration` | Allocate GPU across cluster | Auto + attested |
+| `failover_decision` | Determine failover action | **BFT Council vote** |
+| `cost_report` | Infrastructure cost breakdown | Read-only |
+| `compliance_check` | Check if issue is auto-remediable | **28-domain rules** |
+| `council_propose` | Propose critical action to BFT Council | Governance layer |
+| `council_vote` | Cast vote on pending proposal | Governance layer |
+| `council_status` | Check proposal status | Governance layer |
+| `verify_attestation` | Verify Ed25519 sigil on any action | Cryptographic proof |
 
-## 📖 Documentation
+## 🛡️ Compliance by Design
 
-- [Full Documentation](https://docs.meok.ai/self-healing-infrastructure-mcp)
-- [API Reference](https://api.meok.ai)
-- [EU AI Act Compliance Guide](https://councilof.ai/compliance)
+Every tool call goes through the **Sovereign Governance Layer**:
 
-## 🛡️ Compliance
+```
+Issue Detected → Domain Classification → Compliance Check → [Auto | Council | Block] → Sigil Sign → Log
+```
 
-This MCP server is built with **EU AI Act compliance** built-in:
+- **Finance domain:** `disk_full` → Auto-remediate. `data_loss` → BFT Council.
+- **Healthcare domain:** `backup_verify` → Auto. `phi_exposure` → BFT Council + manual review.
+- **Energy domain:** `load_balancer_shift` → Auto. `grid_disconnect` → BFT Council + safety isolation.
 
-- ✅ Article 9 — Risk Management System
-- ✅ Article 13 — Transparency & Instructions for Use
-- ✅ Article 15 — Bias Detection & Testing
-- ✅ Article 26 — FRIA Support (where applicable)
-- ✅ Article 50 — AI Content Watermarking (where applicable)
+## 🏛️ Part of the Sovereign Temple
 
-Need help getting compliant? **[Book a free 15-min diagnostic →](https://cal.com/csoai/august-audit)**
+This MCP server is part of **[CSOAI Sovereign Temple](https://github.com/CSOAI-ORG/sovereign-temple)** — the open-source sovereign AI governance infrastructure.
 
-## 🏢 Enterprise
-
-Need custom development, SLA guarantees, or white-label deployment?
-
-- **Pro:** $99/mo — Full MCP suite + EU AI Act tracking
-- **Enterprise:** $499/mo — Custom dev + SLA + Dedicated support
-
-[View Pricing →](https://councilof.ai/pricing) | [Contact Sales →](mailto:sales@csoai.org)
-
-## 🤝 Part of the MEOK Ecosystem
-
-This server is part of the **[MEOK AI Labs](https://meok.ai)** ecosystem — 300+ MCP servers for sovereign AI governance.
-
-| Domain | Purpose |
-|--------|---------|
-| [councilof.ai](https://councilof.ai) | EU AI Act compliance marketplace |
-| [safetyof.ai](https://safetyof.ai) | AI safety & monitoring |
-| [meok.ai](https://meok.ai) | Sovereign AI platform |
-| [cobolbridge.ai](https://cobolbridge.ai) | Legacy modernization |
+| Component | Purpose |
+|-----------|---------|
+| [Sigil Bus](https://github.com/CSOAI-ORG/sovereign-temple) | Ed25519 attestation chain for every agent action |
+| [BFT Council](https://github.com/CSOAI-ORG/sovereign-temple) | Byzantine Fault Tolerant consensus for governance |
+| [28-Domain Engine](https://csoai.org) | 280 data sources, 28 industry domains, $0 cost |
+| [Horus Intel](https://app.csoai.org/horus) | Weekly competitive intelligence for AI governance |
+| [HIVE 1](https://proofof.ai) | Enterprise compliance attestation (51 MCP servers) |
 
 ## 📜 License
 
-MIT © [CSOAI-ORG](https://github.com/CSOAI-ORG)
+MIT © [CSOAI-ORG](https://github.com/CSOAI-ORG) · UK Companies House 16939677
 
 ---
 
-<p align="center">
-  <sub>Built with 💜 by <a href="https://meok.ai">MEOK AI Labs</a> · UK Companies House 16939677</sub>
-</p>
-MIT © [MEOK AI Labs](https://meok.ai)
-
-<!-- meok-moat-footer-v1 -->
----
-
-## Pairs with MEOK Governance Suite
-
-Build something that touches users? You need compliance. MEOK ships 38 governance MCPs that drop in alongside this tool — EU AI Act, DORA, NIS2, CRA, GDPR, ISO 42001, FDA SaMD, MDR, Basel, MiFID II, MiCA, COPPA, and more.
-
-```bash
-# One-shot install of the governance pack
-npx meok-setup --pack governance
-```
-
-Free tier: 10 calls/day per MCP. Pro tier (£79/mo): unlimited + cryptographically signed compliance attestations your auditor verifies independently.
-
-→ Full catalogue: [councilof.ai/catalogue](https://councilof.ai/catalogue)
-→ MEOK AI Labs: [meok.ai](https://meok.ai)
-
-<!-- BUY-LADDER:START -->
-
-## 💸 Try MEOK in 30 seconds — instant buy ladder
-
-| Tier | Price | What you get | Stripe |
-|---|---|---|---|
-| Smoke test | **£1** | Signed sample MCP-Hardening report + Article 50 PDF | <https://buy.stripe.com/5kQ6oJ0xS3ce8sl7ew8k91j> |
-| Quick Kit | **£9** | EU AI Act Article 50 implementation guide (C2PA + EU-Icon) | <https://buy.stripe.com/5kQ6oJ0xS3ce8sl7ew8k91j> |
-| Founder Call | **£29** | 30-min 1-on-1 with the founder | <https://buy.stripe.com/5kQ6oJ0xS3ce8sl7ew8k91j> |
-
-> Refundable. UK Stripe — VAT-clean. Builds on the 81-MCP MEOK fleet.
-> Verify any signed report at <https://meok.ai/verify>.
-
-<!-- BUY-LADDER:END -->
-
+<sub>Built with 💜 by CSOAI Labs · Sovereign AI Governance</sub>

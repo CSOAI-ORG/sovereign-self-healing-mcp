@@ -2,27 +2,28 @@
 requires = ["hatchling"]
 build-backend = "hatchling.build"
 [project]
-name = "self-healing-infrastructure-mcp"
-version = "1.0.7"
+name = "sovereign-self-healing-mcp"
+version = "2.0.0"
 readme = "README.md"
-description = "AI-powered self healing infrastructure MCP server for agents. Supports node health check, cluster health check, restart service. By MEOK AI Labs."
+description = "The only self-healing infrastructure MCP with cryptographic governance. Ed25519 sigil, BFT Council, 28-domain compliance."
 license = {file = "LICENSE"}
 requires-python = ">=3.10"
-authors = [{name = "MEOK AI Labs", email = "nicholas@meok.ai"}]
-dependencies = ["mcp>=1.0.0"]
-keywords = ["mcp", "ai", "meok", "self", "healing", "infrastructure"]
+authors = [{name = "CSOAI Labs", email = "nicholas@meok.ai"}]
+dependencies = ["mcp>=1.0.0", "pynacl>=1.5.0"]
+keywords = ["mcp", "ai", "sovereign", "self-healing", "infrastructure", "governance", "attestation", "bft", "compliance"]
 classifiers = [
     "Programming Language :: Python :: 3",
     "License :: OSI Approved :: MIT License",
     "Operating System :: OS Independent",
     "Topic :: Software Development :: Libraries",
+    "Topic :: System :: Monitoring",
+    "Topic :: Security :: Cryptography",
 ]
 [project.urls]
-Homepage = "https://meok.ai"
-Repository = "https://github.com/CSOAI-ORG/self-healing-infrastructure-mcp"
+Homepage = "https://csoai.org"
+Repository = "https://github.com/CSOAI-ORG/sovereign-self-healing-mcp"
 [tool.hatch.build.targets.wheel]
 packages = ["."]
-only-include = ["server.py", "auth_middleware.py"]
-
+only-include = ["server.py", "auth_middleware.py", "sovereign_governance.py"]
 [project.scripts]
-self_healing_infrastructure_mcp = "server:main"
+sovereign_self_healing_mcp = "server:main"

@@ -1,76 +1,140 @@
-name: self-healing-infrastructure-mcp
-description: AI-powered self healing infrastructure MCP server for agents. Supports
-  node health check, cluster health check, restart service. By MEOK AI Labs.
-version: 1.0.0
+name: sovereign-self-healing-mcp
+description: |
+  The only self-healing infrastructure MCP with cryptographic governance.
+  Ed25519 sigil attestation, BFT Council consensus, 28-domain compliance rules.
+  Every remediation is signed, verified, and EU AI Act compliant.
+version: 2.0.0
 tools:
-- name: node_health_check
-  description: Check health of individual infrastructure nodes (CPU, memory, disk,
-    GPU).
-  parameters:
-  - name: node_name
-    type: string
-    required: true
-- name: cluster_health_check
-  description: Check health of all 9 nodes in the cluster.
-  parameters: []
-- name: restart_service
-  description: Restart a failed service with automatic retry logic.
-  parameters:
-  - name: service_name
-    type: string
-    required: true
-  - name: node_name
-    type: string
-    required: true
-  - name: max_retries
-    type: number
-    required: false
-- name: cost_report
-  description: Generate infrastructure cost report with breakdown.
-  parameters:
-  - name: nodes
-    type: array
-    required: true
-  - name: cost_per_hour
-    type: number
-    required: true
-- name: auto_remediate
-  description: Automatically remediate common infrastructure issues.
-  parameters:
-  - name: issue
-    type: string
-    required: true
-  - name: node_name
-    type: string
-    required: true
-- name: gpu_orchestration
-  description: Orchestrate GPU allocation across the 9-node cluster.
-  parameters:
-  - name: task
-    type: string
-    required: true
-  - name: gpu_required
-    type: number
-    required: false
-  - name: priority
-    type: string
-    required: false
-- name: failover_decision
-  description: Determine failover action for a failed node.
-  parameters:
-  - name: failed_node
-    type: string
-    required: true
+  - name: node_health_check
+    description: Check health of individual infrastructure nodes (CPU, memory, disk, GPU).
+    parameters:
+      - name: node_name
+        type: string
+        required: true
+  - name: cluster_health_check
+    description: Check health of all 9 nodes in the cluster.
+    parameters: []
+  - name: restart_service
+    description: Restart a failed service with automatic retry logic.
+    parameters:
+      - name: service_name
+        type: string
+        required: true
+      - name: node_name
+        type: string
+        required: true
+      - name: max_retries
+        type: number
+        required: false
+  - name: auto_remediate
+    description: Automatically remediate common issues with 28-domain compliance check.
+    parameters:
+      - name: issue
+        type: string
+        required: true
+      - name: node_name
+        type: string
+        required: true
+      - name: domain
+        type: string
+        required: false
+  - name: cost_report
+    description: Generate infrastructure cost report with breakdown.
+    parameters:
+      - name: nodes
+        type: array
+        required: true
+      - name: cost_per_hour
+        type: number
+        required: true
+  - name: gpu_orchestration
+    description: Orchestrate GPU allocation across the 9-node cluster.
+    parameters:
+      - name: task
+        type: string
+        required: true
+      - name: gpu_required
+        type: number
+        required: false
+      - name: priority
+        type: string
+        required: false
+  - name: failover_decision
+    description: Determine failover action for a failed node (BFT Council governed).
+    parameters:
+      - name: failed_node
+        type: string
+        required: true
+  - name: compliance_check
+    description: Check if an issue is auto-remediable per 28-domain rules.
+    parameters:
+      - name: issue
+        type: string
+        required: true
+      - name: domain
+        type: string
+        required: false
+  - name: council_propose
+    description: Propose a critical action to the BFT Council.
+    parameters:
+      - name: action
+        type: string
+        required: true
+      - name: domain
+        type: string
+        required: true
+      - name: severity
+        type: string
+        required: true
+  - name: council_vote
+    description: Cast a vote on a pending BFT Council proposal.
+    parameters:
+      - name: proposal_id
+        type: string
+        required: true
+      - name: approve
+        type: boolean
+        required: true
+      - name: node_id
+        type: string
+        required: true
+  - name: council_status
+    description: Get the status of a BFT Council proposal.
+    parameters:
+      - name: proposal_id
+        type: string
+        required: true
+  - name: verify_attestation
+    description: Verify an Ed25519 sigil attestation bundle.
+    parameters:
+      - name: bundle
+        type: object
+        required: true
 startCommand:
   type: stdio
   configSchema:
     type: object
-    required:
-    - apiKey
+    required: []
     properties:
       apiKey:
         type: string
-        description: Your MEOK API Key
-  commandFunction: "(config) => ({\n  command: 'uvx',\n  args: ['self-healing-infrastructure-mcp',\
-    \ '--api-key', config.apiKey],\n  env: {\n    MEOK_API_KEY: config.apiKey\n  }\n\
-    })"
+        description: CSOAI API Key (optional; enables x402 micropayments)
+        default: ""
+      domain:
+        type: string
+        description: Default compliance domain (finance, healthcare, energy, etc.)
+        default: "default"
+      logLevel:
+        type: string
+        description: Log level (debug, info, warn, error)
+        default: "info"
+  commandFunction: |
+    (config) => ({
+      command: 'uvx',
+      args: ['sovereign-self-healing-mcp'],
+      env: {
+        CSOAI_API_KEY: config.apiKey || '',
+        DEFAULT_DOMAIN: config.domain || 'default',
+        LOG_LEVEL: config.logLevel || 'info',
+      }
+    })

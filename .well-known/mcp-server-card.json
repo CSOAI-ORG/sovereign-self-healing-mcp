@@ -1,34 +1,25 @@
 {
-  "name": "self-healing-infrastructure-mcp",
-  "title": "Self Healing Infrastructure Mcp",
-  "description": "AI-powered self healing infrastructure MCP server for agents. Supports node health check, cluster health check, restart service. By MEOK AI Labs.",
-  "version": "1.0.6",
-  "homepage": "https://meok.ai",
+  "name": "sovereign-self-healing-mcp",
+  "title": "Sovereign Self Healing Infrastructure Mcp",
+  "description": "The only self-healing infrastructure MCP with cryptographic governance. Ed25519 sigil, BFT Council, 28-domain compliance. By CSOAI Labs.",
+  "version": "2.0.0",
+  "homepage": "https://csoai.org",
   "license": "MIT",
   "transport": {
     "type": "stdio"
   },
   "tools": [
-    {
-      "name": "node_health_check"
-    },
-    {
-      "name": "cluster_health_check"
-    },
-    {
-      "name": "restart_service"
-    },
-    {
-      "name": "cost_report"
-    },
-    {
-      "name": "auto_remediate"
-    },
-    {
-      "name": "gpu_orchestration"
-    },
-    {
-      "name": "failover_decision"
-    }
+    { "name": "node_health_check" },
+    { "name": "cluster_health_check" },
+    { "name": "restart_service" },
+    { "name": "cost_report" },
+    { "name": "auto_remediate" },
+    { "name": "gpu_orchestration" },
+    { "name": "failover_decision" },
+    { "name": "compliance_check" },
+    { "name": "council_propose" },
+    { "name": "council_vote" },
+    { "name": "council_status" },
+    { "name": "verify_attestation" }
   ]
 }

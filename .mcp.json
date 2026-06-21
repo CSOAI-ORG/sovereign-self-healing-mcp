@@ -1,40 +1,29 @@
 {
-  "name": "self-healing-infrastructure-mcp",
-  "description": "AI-powered self healing infrastructure MCP server for agents. Supports node health check, cluster health check, restart service. By MEOK AI Labs.",
-  "version": "1.0.0",
+  "name": "sovereign-self-healing-mcp",
+  "version": "2.0.0",
+  "description": "The only self-healing infrastructure MCP with cryptographic governance. Ed25519 sigil, BFT Council, 28-domain compliance.",
   "tools": [
     {
       "name": "node_health_check",
-      "description": "Check health of infrastructure nodes including CPU, memory, disk, and services.",
+      "description": "Check health of infrastructure nodes including CPU, memory, disk, and GPU. Ed25519-attested.",
       "parameters": {
         "type": "object",
         "properties": {
-          "node_name": {
-            "type": "string"
-          }
+          "node_name": { "type": "string" }
         },
-        "required": [
-          "node_name"
-        ]
+        "required": ["node_name"]
       }
     },
     {
       "name": "restart_service",
-      "description": "Restart a failed service with automatic rollback on repeated failures.",
+      "description": "Restart a failed service with automatic rollback on repeated failures. BFT Council-governed if critical.",
       "parameters": {
         "type": "object",
         "properties": {
-          "service_name": {
-            "type": "string"
-          },
-          "node_name": {
-            "type": "string"
-          }
+          "service_name": { "type": "string" },
+          "node_name": { "type": "string" }
         },
-        "required": [
-          "service_name",
-          "node_name"
-        ]
+        "required": ["service_name", "node_name"]
       }
     },
     {
@@ -43,36 +32,83 @@
       "parameters": {
         "type": "object",
         "properties": {
-          "nodes": {
-            "type": "array"
-          },
-          "cost_per_hour": {
-            "type": "number"
-          }
+          "nodes": { "type": "array" },
+          "cost_per_hour": { "type": "number" }
         },
-        "required": [
-          "nodes",
-          "cost_per_hour"
-        ]
+        "required": ["nodes", "cost_per_hour"]
       }
     },
     {
       "name": "auto_remediate",
-      "description": "Automatically remediate common infrastructure issues using predefined playbooks.",
+      "description": "Automatically remediate common infrastructure issues with 28-domain compliance check. Sigil-signed.",
       "parameters": {
         "type": "object",
         "properties": {
-          "issue": {
-            "type": "string"
-          },
-          "node_name": {
-            "type": "string"
-          }
+          "issue": { "type": "string" },
+          "node_name": { "type": "string" },
+          "domain": { "type": "string" }
         },
-        "required": [
-          "issue",
-          "node_name"
-        ]
+        "required": ["issue", "node_name"]
+      }
+    },
+    {
+      "name": "compliance_check",
+      "description": "Check if an issue is auto-remediable per 28-domain rules. Returns auto/council/block decision.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "issue": { "type": "string" },
+          "domain": { "type": "string" }
+        },
+        "required": ["issue"]
+      }
+    },
+    {
+      "name": "council_propose",
+      "description": "Propose a critical action to the BFT Council for consensus.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "action": { "type": "string" },
+          "domain": { "type": "string" },
+          "severity": { "type": "string" }
+        },
+        "required": ["action", "domain", "severity"]
+      }
+    },
+    {
+      "name": "council_vote",
+      "description": "Cast a vote on a pending BFT Council proposal.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "proposal_id": { "type": "string" },
+          "approve": { "type": "boolean" },
+          "node_id": { "type": "string" }
+        },
+        "required": ["proposal_id", "approve", "node_id"]
+      }
+    },
+    {
+      "name": "council_status",
+      "description": "Get the status of a BFT Council proposal.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "proposal_id": { "type": "string" }
+        },
+        "required": ["proposal_id"]
+      }
+    },
+    {
+      "name": "verify_attestation",
+      "description": "Verify an Ed25519 sigil attestation bundle.",
+      "parameters": {
+        "type": "object",
+        "properties": {
+          "bundle": { "type": "string" }
+        },
+        "required": ["bundle"]
       }
     }
   ]
