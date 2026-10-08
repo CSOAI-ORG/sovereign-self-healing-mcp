@@ -9,7 +9,7 @@ description = "The only self-healing infrastructure MCP with cryptographic gover
 license = {file = "LICENSE"}
 requires-python = ">=3.10"
 authors = [{name = "CSOAI Labs", email = "nicholas@meok.ai"}]
-dependencies = ["mcp>=1.0.0", "pynacl>=1.5.0"]
+dependencies = ["mcp>=2.0.0", "pynacl>=1.5.0"]
 keywords = ["mcp", "ai", "sovereign", "self-healing", "infrastructure", "governance", "attestation", "bft", "compliance"]
 classifiers = [
     "Programming Language :: Python :: 3",
@@ -24,6 +24,6 @@ Homepage = "https://csoai.org"
 Repository = "https://github.com/CSOAI-ORG/sovereign-self-healing-mcp"
 [tool.hatch.build.targets.wheel]
 packages = ["."]
-only-include = ["server.py", "auth_middleware.py", "sovereign_governance.py"]
+only-include = ["server.py", "auth_middleware.py", "sovereign_governance.py", "mcp2026_shim.py"]
 [project.scripts]
 sovereign_self_healing_mcp = "server:main"
